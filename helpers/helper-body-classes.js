@@ -3,6 +3,10 @@ module.exports.bodyClasses = function () {
     var pageSlug = this.context.src.name,
         classes = [];
 
+        if (this.context.parent) {
+            pageSlug = this.context.parent + '-' + pageSlug;
+        }
+
         classes.push(pageSlug);
 
         if (this.context.layout) {
