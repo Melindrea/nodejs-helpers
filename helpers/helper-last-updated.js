@@ -7,7 +7,7 @@ module.exports.lastUpdated = function () {
         file = this.context.originalPath,
         fileStats = fs.statSync(file),
         lastUpdated = moment(fileStats.mtime),
-        time = sprintf('<time datetime="%s">%s</time>', lastUpdated.format(), lastUpdated.format('YYYY-MM-DD'));
+        time = sprintf('<time itemprop="dateModified" datetime="%s">%s</time>', lastUpdated.format(), lastUpdated.format('YYYY-MM-DD'));
 
         return new Handlebars.SafeString(time);
 };
